@@ -1,14 +1,17 @@
 import clsx from "clsx";
 import React from "react";
 
-const GuideCard = ({ selected, date, subject, details }) => {
+const GuideCard = ({ selected, date, subject, details,id,setSelected }) => {
+
+  const handleHover = ()=> {setSelected(id)}
+
   return (
-    <div
+    <div 
       className={clsx(
-        "w-[284px] h-[286px] text-left px-3 py-8",
-        selected
-          ? "bg-primaryBackground rounded-[15px] border border-primary"
-          : "border-b-2"
+        "w-[284px] h-[286px] text-left px-3 py-8 cursor-pointer",
+        // selected
+           "hover:bg-primaryBackground  hover:rounded-[15px] hover:border hover:border-primary border-b-2"
+          //  "border-b-2"
       )}
     >
       <p className="text-[14px] text-[#757575] mb-5">{date}</p>
